@@ -1,0 +1,15 @@
+import math
+n = int(input())
+member = input().split()
+massiv = [0]*n
+for i in range(n):
+    massiv[i] = int(member[i])
+count = 0
+for i in range(n-1):
+    for j in range(n-i-1):
+        if massiv[j] > massiv[j+1]:
+            massiv[j], massiv[j+1] = massiv[j+1], massiv[j]
+
+for i in range(math.ceil(n/2)):
+    count += math.ceil(massiv[i]/2)
+print(count)
